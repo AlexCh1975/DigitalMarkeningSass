@@ -21,18 +21,28 @@ summary::-webkit-details-marker {
   padding-right: calc(50% - 570px);
 }
 
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translate(0, -10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
 .header {
   display: flex;
   flex-wrap: wrap;
 }
 
-.collection__basket, .collection .choose, .collection__select, .subscribe__promotion, .subscribe__info, .product__inner:hover .product__basket, .product-items, .offer__item, .top {
+.collection__basket, .collection .choose, .collection__select, .subscribe__promotion, .subscribe__info, .product__inner:hover .product__basket, .product__wrapper, .product-items, .offer__item, .top {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.top-head, .product__wrapper, .top__title {
+.top-head, .top__title {
   display: flex;
   justify-content: center;
 }
@@ -104,7 +114,7 @@ summary::-webkit-details-marker {
   width: 232px;
   background: #FFF;
   box-shadow: -7px 7px 22px 4px rgba(0, 0, 0, 0.1);
-  transition: right 0.7s;
+  transition: right 1.5s ease-in-out;
 }
 .menu__title-h3 {
   font-weight: 700;
@@ -127,7 +137,7 @@ summary::-webkit-details-marker {
   color: #6F6E6E;
   margin-bottom: 11px;
   margin-left: 20px;
-  transition: all 0.3s;
+  transition: all 0.7s;
 }
 .menu__link:hover {
   text-decoration: underline;
@@ -197,7 +207,7 @@ summary::-webkit-details-marker {
   flex-direction: column;
   cursor: pointer;
   gap: 6px;
-  transition: scale 0.3s;
+  transition: scale 0.7s;
 }
 .offer__item-title {
   font-weight: 700;
@@ -217,9 +227,6 @@ summary::-webkit-details-marker {
 .offer__item4::before {
   content: "LUXIROUS & TRENDY";
 }
-.offer__item:hover .offer__item-title {
-  transform: scale(1.05);
-}
 .offer__item:active .offer__item-title {
   transform: scale(0.96);
 }
@@ -232,16 +239,16 @@ summary::-webkit-details-marker {
   background-size: cover;
 }
 .offer__item1 {
-  background-image: url(/app/img/for_women.png);
+  background-image: url(../img/for_women.png);
 }
 .offer__item2 {
-  background-image: url(/app/img/for_man.png);
+  background-image: url(../img/for_man.png);
 }
 .offer__item3 {
-  background-image: url(/app/img/for_kids.png);
+  background-image: url(../img/for_kids.png);
 }
 .offer__item4 {
-  background-image: url(/app/img/accesories.png);
+  background-image: url(../img/accesories.png);
   grid-column: span 3;
 }
 
@@ -269,7 +276,7 @@ summary::-webkit-details-marker {
   font-size: 16px;
   line-height: 19px;
   color: #F26376;
-  transition: all 0.3s;
+  transition: all 0.7s;
 }
 .product-box__btn:hover {
   background: #F16D7F;
@@ -294,7 +301,7 @@ summary::-webkit-details-marker {
 }
 .product__wrapper {
   background: #F7E4E2;
-  max-width: 100%;
+  width: 360px;
   height: 420px;
 }
 .product__item-img {
@@ -305,7 +312,6 @@ summary::-webkit-details-marker {
   position: relative;
   display: flex;
   cursor: pointer;
-  transition: all 0.7s;
 }
 .product__inner::before {
   position: absolute;
@@ -315,6 +321,7 @@ summary::-webkit-details-marker {
   height: 100%;
   background: rgba(58, 56, 56, 0.86);
   opacity: 0;
+  transition: opacity 0.7s;
   content: "";
 }
 .product__inner:hover::before {
@@ -388,10 +395,7 @@ summary::-webkit-details-marker {
 .info__box {
   flex-direction: column;
   cursor: pointer;
-  transition: scale 0.3s;
-}
-.info__box:hover {
-  transform: scale(1.05);
+  transition: scale 0.7s;
 }
 .info__box:active {
   transform: scale(0.96);
@@ -424,7 +428,7 @@ summary::-webkit-details-marker {
 
 /*  Subscribe   */
 .subscribe {
-  background-image: url(/app/img/photo_subscribe.jpg);
+  background-image: url(../img/photo_subscribe.jpg);
   background-position: center;
   background-size: cover;
   max-width: 100vw;
@@ -526,7 +530,7 @@ summary::-webkit-details-marker {
   gap: 8px;
 }
 .footer__social-link {
-  transition: all 0.3s;
+  transition: all 0.7s;
   display: block;
 }
 .footer__social-link:hover {
@@ -580,7 +584,7 @@ summary::-webkit-details-marker {
   font-size: 14;
   line-height: 17px;
   color: #636363;
-  transition: all 0.3s;
+  transition: all 0.7s;
 }
 .breadcrumbs__link:nth-child(n+2)::before {
   padding: 3px;
@@ -657,7 +661,7 @@ summary::-webkit-details-marker {
   color: #6F6E6E;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.7s;
 }
 .collection__select-item:hover .collection__select-link {
   color: #222;
@@ -683,7 +687,7 @@ summary::-webkit-details-marker {
 }
 .collection .choose__summary {
   gap: 9px;
-  transition: all 0.3s;
+  transition: all 0.7s;
 }
 .collection .choose__summary:hover .choose__heading {
   color: #222;
@@ -709,7 +713,7 @@ summary::-webkit-details-marker {
   font-size: 14px;
   line-height: 17px;
   color: #6F6E6E;
-  transition: all 0.3s;
+  transition: all 0.7s;
 }
 .collection .choose__check:hover {
   color: #222;
@@ -722,7 +726,7 @@ summary::-webkit-details-marker {
   border: 1px solid #EF6A6A;
   margin-bottom: 194px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.7s;
 }
 .collection__basket:hover {
   background-color: #F16D7F;
@@ -792,6 +796,16 @@ summary::-webkit-details-marker {
   font-size: 14px;
   line-height: 17px;
   font-weight: 600;
+  transition: color 0.7s;
+}
+.filter__summary {
+  width: 27%;
+}
+.filter__summary:hover .filter__heading {
+  color: #F16D7F;
+}
+.filter__summary:hover path {
+  fill: #F16D7F;
 }
 .filter[open] .filter__heading {
   color: #F16D7F;
@@ -807,6 +821,7 @@ summary::-webkit-details-marker {
   position: absolute;
   background: #FFF;
   box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  animation: slide 0.7s ease-in-out;
 }
 .filter__head {
   font-weight: 400;
@@ -835,6 +850,7 @@ summary::-webkit-details-marker {
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+  transition: all 0.7px;
 }
 .filter__link:hover {
   text-decoration: underline;
@@ -852,6 +868,14 @@ summary::-webkit-details-marker {
 }
 .sort__summary {
   cursor: pointer;
+  transition: all 0.7s;
+}
+.sort__summary:hover .sort__heading {
+  color: #000;
+  font-weight: 600;
+}
+.sort__summary:hover path {
+  fill: #000;
 }
 .sort__heading {
   color: #6F6E6E;
@@ -862,7 +886,7 @@ summary::-webkit-details-marker {
 .sort__box-checks {
   background: #FFF;
   box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
-  width: 80px;
+  width: 79px;
   position: absolute;
   top: 33px;
   left: -9px;
@@ -879,6 +903,9 @@ summary::-webkit-details-marker {
   color: #000;
   font-weight: bold;
   text-decoration: underline;
+}
+.sort__input {
+  cursor: pointer;
 }
 .sort__label {
   color: #6F6E6E;
